@@ -148,7 +148,7 @@ Resources:
         KmsKeyModule: !GetAtt 'Key.Outputs.StackName'
         SecretModule: !GetAtt 'Secret.Outputs.StackName'
         DBAllocatedStorage: !Ref DatabaseAllocatedStorage
-        DBInstanceClass: 'db.t4g.micro'
+        DBInstanceClass: 'db.t4g.small'
         DBName: 'mastodon'
         DBBackupRetentionPeriod: !Ref DatabaseBackupRetentionPeriod
         DBMasterUsername: 'mastodon'
@@ -228,9 +228,9 @@ Resources:
         AppEnvironment25Value: !Ref ActiveRecordEncryptionPrimaryKey
         Cpu: '0.5'
         Memory: '1'
-        DesiredCount: '1'
-        MaxCapacity: '1'
-        MinCapacity: '1'
+        DesiredCount: '2'
+        MaxCapacity: '4'
+        MinCapacity: '2'
         LogsRetentionInDays: '14'
         SubnetsReach: 'Public'
         AutoScaling: 'false'
@@ -386,8 +386,8 @@ Resources:
         AppEnvironment24Value: !Ref ActiveRecordEncryptionKeyDerivationSalt
         AppEnvironment25Key: 'ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY'
         AppEnvironment25Value: !Ref ActiveRecordEncryptionPrimaryKey
-        Cpu: '0.25'
-        Memory: '1'
+        Cpu: '1'
+        Memory: '2'
         DesiredCount: '1'
         MaxCapacity: '1'
         MinCapacity: '1'
