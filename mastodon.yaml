@@ -43,6 +43,10 @@ Parameters:
     Type: String
     Default: enabled
     AllowedValues: [enabled, disabled]
+  DatabaseBackupRetentionPeriod:
+    Description: 'Number of days to keep automated snapshots'
+    Type: Number
+    Default: 30
 Resources:
   Alerting:
     Type: 'AWS::CloudFormation::Stack'
@@ -134,7 +138,7 @@ Resources:
         DBAllocatedStorage: !Ref DatabaseAllocatedStorage
         DBInstanceClass: 'db.t4g.small'
         DBName: 'mastodon'
-        DBBackupRetentionPeriod: '30'
+        DBBackupRetentionPeriod: !Ref DatabaseBackupRetentionPeriod
         DBMasterUsername: 'mastodon'
         DBMultiAZ: 'false'
         EngineVersion: '14.5'
@@ -155,7 +159,7 @@ Resources:
         AlertingModule: !GetAtt 'Alerting.Outputs.StackName'
         ClientSgModule1: !GetAtt 'ClientSg.Outputs.StackName'
         ManagedPolicyArns: !Ref S3Policy
-        AppImage: 'ghcr.io/mastodon/mastodon:v4.2.2'
+        AppImage: 'ghcr.io/mastodon/mastodon:v4.2.5'
         AppCommand: 'bash,-c,bundle exec rails db:migrate && bundle exec rails s -p 3000'
         AppPort: '3000'
         AppEnvironment1Key: 'LOCAL_DOMAIN'
@@ -228,7 +232,7 @@ Resources:
         AlertingModule: !GetAtt 'Alerting.Outputs.StackName'
         ClientSgModule1: !GetAtt 'ClientSg.Outputs.StackName'
         ManagedPolicyArns: !Ref S3Policy
-        AppImage: 'ghcr.io/mastodon/mastodon:v4.2.2'
+        AppImage: 'ghcr.io/mastodon/mastodon:v4.2.5'
         AppCommand: 'bash,-c,node ./streaming'
         AppPort: '4000'
         AppEnvironment1Key: 'LOCAL_DOMAIN'
@@ -300,7 +304,7 @@ Resources:
         AlertingModule: !GetAtt 'Alerting.Outputs.StackName'
         ClientSgModule1: !GetAtt 'ClientSg.Outputs.StackName'
         ManagedPolicyArns: !Ref S3Policy
-        AppImage: 'ghcr.io/mastodon/mastodon:v4.2.2'
+        AppImage: 'ghcr.io/mastodon/mastodon:v4.2.5'
         AppCommand: 'bash,-c,bundle exec sidekiq'
         AppEnvironment1Key: 'LOCAL_DOMAIN'
         AppEnvironment1Value: !Ref DomainName
