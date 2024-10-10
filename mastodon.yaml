@@ -226,6 +226,8 @@ Resources:
         AppEnvironment24Value: !Ref ActiveRecordEncryptionKeyDerivationSalt
         AppEnvironment25Key: 'ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY'
         AppEnvironment25Value: !Ref ActiveRecordEncryptionPrimaryKey
+        AppEnvironment26Key: 'REDIS_DRIVER'
+        AppEnvironment26Value: 'ruby'
         Cpu: '0.5'
         Memory: '1'
         DesiredCount: '2'
@@ -307,6 +309,8 @@ Resources:
         AppEnvironment24Value: !Ref ActiveRecordEncryptionKeyDerivationSalt
         AppEnvironment25Key: 'ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY'
         AppEnvironment25Value: !Ref ActiveRecordEncryptionPrimaryKey
+        AppEnvironment26Key: 'REDIS_DRIVER'
+        AppEnvironment26Value: 'ruby'
         Cpu: '0.25'
         Memory: '0.5'
         DesiredCount: '1'
@@ -386,6 +390,8 @@ Resources:
         AppEnvironment24Value: !Ref ActiveRecordEncryptionKeyDerivationSalt
         AppEnvironment25Key: 'ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY'
         AppEnvironment25Value: !Ref ActiveRecordEncryptionPrimaryKey
+        AppEnvironment26Key: 'REDIS_DRIVER'
+        AppEnvironment26Value: 'ruby'
         Cpu: '1'
         Memory: '2'
         DesiredCount: '1'
@@ -465,6 +471,8 @@ Resources:
         AppEnvironment24Value: !Ref ActiveRecordEncryptionKeyDerivationSalt
         AppEnvironment25Key: 'ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY'
         AppEnvironment25Value: !Ref ActiveRecordEncryptionPrimaryKey
+        AppEnvironment26Key: 'REDIS_DRIVER'
+        AppEnvironment26Value: 'ruby'
         Cpu: '1'
         Memory: '2'
         LogsRetentionInDays: '14'
