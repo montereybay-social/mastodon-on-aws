@@ -171,7 +171,7 @@ Resources:
         AlertingModule: !GetAtt 'Alerting.Outputs.StackName'
         ClientSgModule1: !GetAtt 'ClientSg.Outputs.StackName'
         ManagedPolicyArns: !Ref S3Policy
-        AppImage: '868200223802.dkr.ecr.us-west-1.amazonaws.com/mastodon/mastodon:v4.4.3'
+        AppImage: '868200223802.dkr.ecr.us-west-1.amazonaws.com/mastodon/mastodon:v4.5.0'
         AppCommand: 'bash,-c,bundle exec rails db:migrate && bundle exec rails s -p 3000'
         AppPort: '3000'
         AppEnvironment1Key: 'LOCAL_DOMAIN'
@@ -252,7 +252,7 @@ Resources:
         AlertingModule: !GetAtt 'Alerting.Outputs.StackName'
         ClientSgModule1: !GetAtt 'ClientSg.Outputs.StackName'
         ManagedPolicyArns: !Ref S3Policy
-        AppImage: '868200223802.dkr.ecr.us-west-1.amazonaws.com/mastodon/mastodon-streaming:v4.4.3'
+        AppImage: '868200223802.dkr.ecr.us-west-1.amazonaws.com/mastodon/mastodon-streaming:v4.5.0'
         AppCommand: 'bash,-c,node ./streaming/index.js'
         AppPort: '4000'
         AppEnvironment1Key: 'LOCAL_DOMAIN'
@@ -332,7 +332,7 @@ Resources:
         AlertingModule: !GetAtt 'Alerting.Outputs.StackName'
         ClientSgModule1: !GetAtt 'ClientSg.Outputs.StackName'
         ManagedPolicyArns: !Ref S3Policy
-        AppImage: '868200223802.dkr.ecr.us-west-1.amazonaws.com/mastodon/mastodon:v4.4.3'
+        AppImage: '868200223802.dkr.ecr.us-west-1.amazonaws.com/mastodon/mastodon:v4.5.0'
         AppCommand: 'bash,-c,bundle exec sidekiq'
         AppEnvironment1Key: 'LOCAL_DOMAIN'
         AppEnvironment1Value: !Ref DomainName
@@ -411,7 +411,7 @@ Resources:
         AlertingModule: !GetAtt 'Alerting.Outputs.StackName'
         ClientSgModule1: !GetAtt 'ClientSg.Outputs.StackName'
         ManagedPolicyArns: !Ref S3Policy
-        AppImage: '868200223802.dkr.ecr.us-west-1.amazonaws.com/mastodon/mastodon:v4.4.3'
+        AppImage: '868200223802.dkr.ecr.us-west-1.amazonaws.com/mastodon/mastodon:v4.5.0'
         AppCommand: 'bash,-c,RAILS_ENV=production bin/tootctl media remove && RAILS_ENV=production bin/tootctl preview_cards remove'
         AppEnvironment1Key: 'LOCAL_DOMAIN'
         AppEnvironment1Value: !Ref DomainName
