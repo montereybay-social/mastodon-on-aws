@@ -142,7 +142,7 @@ Resources:
         ClientSgModule: !GetAtt 'ClientSg.Outputs.StackName'
         AlertingModule: !GetAtt 'Alerting.Outputs.StackName'
         KmsKeyModule: !GetAtt 'Key.Outputs.StackName'
-        EngineVersion: '5.0.6'
+        EngineVersion: '7.1'
         CacheNodeType: 'cache.t4g.micro'
         TransitEncryption: 'false'
         AuthToken: ''
@@ -239,10 +239,10 @@ Resources:
         AppEnvironment24Value: !Ref ActiveRecordEncryptionKeyDerivationSalt
         AppEnvironment25Key: 'ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY'
         AppEnvironment25Value: !Ref ActiveRecordEncryptionPrimaryKey
-        Cpu: '0.5'
-        Memory: '1'
+        Cpu: '1'
+        Memory: '2'
         DesiredCount: '1'
-        MaxCapacity: '1'
+        MaxCapacity: '4'
         MinCapacity: '1'
         LogsRetentionInDays: '14'
         SubnetsReach: 'Public'
